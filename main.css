@@ -1,0 +1,82 @@
+body{
+    background-color: #85734c !important;
+}
+
+.header{
+    display: grid;
+    position: relative;
+    /* background-color: red; */
+    width: 100vw;
+    height: 10vh;
+    grid-template-columns: 7.5% 7.5% 85%;
+    overflow: hidden;
+}
+
+.game-container{
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    margin-top: 50px;
+}
+
+.btn-back{
+    color: #634705;
+    font-size: 50px;
+    background-color: Transparent;
+    border: none;
+}
+
+.icon{
+
+}
+
+.hdr-title{
+    font-size: 30px;
+    text-align: center;
+    padding-top: 15px;
+    color: orange;
+    justify-self: start;
+    font-weight: bold;
+    /* overflow: hidden; */
+}
+
+.player{
+    display: grid;
+    row-gap: 40px;
+    justify-items: center;
+    margin-left: 15vw;
+}
+
+.text-player{
+    font-size: 3vw;
+    font-weight: bold;
+}
+
+.mid-utilities{
+    display: grid;
+    grid-template-rows: 95% 5%;
+}
+
+.text-vs{
+    font-size: 100px;
+    color: red;
+    margin-top: 200px;
+    font-weight: bold;
+    justify-self:center;
+}
+
+.btn-refresh{
+    justify-self: center;
+}
+
+.com{
+    display: grid;
+    row-gap: 40px;
+    justify-items: center;
+    margin-right: 15vw;
+}
+
+.text-com{
+    font-size: 3vw;
+    font-weight: bold;
+}
