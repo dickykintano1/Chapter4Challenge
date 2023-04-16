@@ -2,6 +2,15 @@ body{
     background-color: #85734c !important;
 }
 
+.img-clickable:hover{
+    transition: .3s;
+    width: 120px;
+}
+
+.img{
+    position: absolute;
+}
+
 .header{
     display: grid;
     position: relative;
@@ -42,14 +51,27 @@ body{
 
 .player{
     display: grid;
-    row-gap: 40px;
+    /* row-gap: 40px; */
     justify-items: center;
     margin-left: 15vw;
+    /* position: relative; */
 }
 
 .text-player{
     font-size: 3vw;
     font-weight: bold;
+}
+
+.player-rock{
+    margin-top: 15vh;
+}
+
+.player-paper{
+    margin-top: 30vh;
+}
+
+.player-scissor{
+    margin-top: 55vh;
 }
 
 .mid-utilities{
@@ -67,6 +89,7 @@ body{
 
 .btn-refresh{
     justify-self: center;
+    margin-top: 65vh;
 }
 
 .com{
@@ -74,6 +97,19 @@ body{
     row-gap: 40px;
     justify-items: center;
     margin-right: 15vw;
+    position: relative;
+}
+
+.com-rock{
+    margin-top: 15vh;
+}
+
+.com-paper{
+    margin-top: 30vh;
+}
+
+.com-scissor{
+    margin-top: 55vh;
 }
 
 .text-com{

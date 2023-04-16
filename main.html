@@ -14,19 +14,45 @@
         <div class="game-container">
             <div class="player">
                 <p class="text-player">PLAYER 1</p>
-                <img src="assets/batu.png" alt="batu.png" width="100">
-                <img src="assets/kertas.png" alt="kertas.png" width="100">
-                <img src="assets/gunting.png" alt="gunting.png" width="100">
+                <img 
+                class='img img-clickable player-rock' 
+                id='1' 
+                onClick="decideResult(this)"
+                src="assets/batu.png" 
+                alt="batu.png" 
+                width="100"
+                >
+                <img 
+                class='img img-clickable player-paper' 
+                id='2' 
+                onClick="decideResult(this)"
+                src="assets/kertas.png" 
+                alt="kertas.png" 
+                width="100"
+                >
+                <img 
+                class='img img-clickable player-scissor' 
+                id='3' 
+                onClick="decideResult(this)"
+                src="assets/gunting.png" 
+                alt="gunting.png" 
+                width="100">
             </div>
             <div class="mid-utilities">
-                <p class="text-vs">VS</p>
-                <img class="btn-refresh" src="assets/refresh.png" alt="refresh.png" width="75">
+                <p id='mid-text'class="text-vs">VS</p>
+                <img 
+                class="img img-clickable btn-refresh" 
+                id='refresh' 
+                onClick="refresh()"
+                src="assets/refresh.png" 
+                alt="refresh.png" 
+                width="75">
             </div>
             <div class="com">
                 <p class="text-com">COM</p>
-                <img src="assets/batu.png" alt="batu.png" width="100">
-                <img src="assets/kertas.png" alt="kertas.png" width="100">
-                <img src="assets/gunting.png" alt="gunting.png" width="100">
+                <img class='img com-rock' id='1' src="assets/batu.png" alt="batu.png" width="100">
+                <img class='img com-paper' id='2' src="assets/kertas.png" alt="kertas.png" width="100">
+                <img class='img com-scissor' id="3" src="assets/gunting.png" alt="gunting.png" width="100">
             </div>
         </div>
 
