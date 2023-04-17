@@ -45,35 +45,27 @@ function comChoose(){
     }
 }
 
-function showWin(){
-    midText.innerHTML = "YOU WIN";
-    midText.style.backgroundColor = 'green';
-    midText.style.color = 'white';
-    midText.style.borderRadius = '25px';
-    midText.style.transform = 'rotate(-30deg)';
-    midText.style.fontSize = '5vw';
-    midText.style.padding = '20px';
+class Result{
+    constructor(text, color){
+        this.text = text;
+        this.color = color;
+    }
+
+    show(){
+        midText.innerHTML = this.text;
+        midText.style.backgroundColor = this.color;
+        midText.style.color = 'white';
+        midText.style.borderRadius = '25px';
+        midText.style.transform = 'rotate(-30deg)';
+        midText.style.fontSize = '5vw';
+        midText.style.padding = '20px';
+    }
 }
 
-function showLose(){
-    midText.innerHTML = "YOU LOSE";
-    midText.style.backgroundColor = 'red';
-    midText.style.color = 'white';
-    midText.style.borderRadius = '25px';
-    midText.style.transform = 'rotate(-30deg)';
-    midText.style.fontSize = '5vw';
-    midText.style.padding = '20px';
-}
+let win = new Result('YOU WIN', 'green')
+let lose = new Result('YOU LOSE', 'red')
+let draw = new Result('DRAW', 'orange')
 
-function showDraw(){
-    midText.innerHTML = "DRAW";
-    midText.style.backgroundColor = 'orange';
-    midText.style.color = 'white';
-    midText.style.borderRadius = '25px';
-    midText.style.transform = 'rotate(-30deg)';
-    midText.style.fontSize = '5vw';
-    midText.style.padding = '20px';
-}
 
 function refreshResult(){
     midText.innerHTML = "VS";
@@ -85,6 +77,9 @@ function refreshResult(){
     midText.style.padding = '';
 
     playerImg.style.width='';
+    playerImg.style.backgroundColor='';
+    playerImg.style.padding = '';
+    playerImg.style.borderRadius='';
 
     comRock.refresh();
     comPaper.refresh();
@@ -94,25 +89,32 @@ function refreshResult(){
 
 function condition(){
     if(playerChoiceId == comFinalChoice){
-        showDraw();
+        // showDraw();
+        draw.show();
         disableEnable();
     } else if (playerChoiceId == '1' && comFinalChoice == '2'){
-        showLose()
+        // showLose();
+        lose.show();
         disableEnable();
     } else if (playerChoiceId == '1' && comFinalChoice == '3'){
-        showWin();
+        // showWin();
+        win.show();
         disableEnable();
     } else if (playerChoiceId == '2' && comFinalChoice == '1'){
-        showWin();
+        // showWin();
+        win.show();
         disableEnable();
     } else if (playerChoiceId == '2' && comFinalChoice == '3'){
-        showLose()
+        // showLose();
+        lose.show();
         disableEnable();
     } else if (playerChoiceId == '3' && comFinalChoice == '1'){
-        showLose()
+        // showLose();
+        lose.show();
         disableEnable();
     } else if (playerChoiceId == '3' && comFinalChoice == '2'){
-        showWin();
+        // showWin();
+        win.show();
         disableEnable();
     }
 }
@@ -133,10 +135,17 @@ function disableEnable(){
     
 }
 
+function highlightPlayer(){
+    playerImg.style.width='120px';
+    playerImg.style.backgroundColor='rgb(255,255,255, .5)';
+    playerImg.style.padding = '5px';
+    playerImg.style.borderRadius='10px';
+}
+
 function decideResult(clicked){
     playerChoiceId = clicked.id;
     playerImg = clicked;
-    playerImg.style.width='120px';
+    highlightPlayer()
     if (playerChoiceId != 'undefined'){
         comChoose();
         condition();
